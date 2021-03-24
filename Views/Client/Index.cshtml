@@ -1,21 +1,21 @@
-﻿@model IEnumerable<DashboardManagerMadera.Models.Commercial>
+﻿@model IEnumerable<DashboardManagerMadera.Models.Client>
 
 @{
-    ViewData["Title"] = "Commerciaux";
+    ViewData["Title"] = "Clients";
 }
 
 <div class="section">
     <div class="text-left">
-        <h1 class="display-4">Liste des <span id="titre_section">commerciaux</span></h1>
-        <h3 class="mb-4">Retrouvez ici la liste des <b>commerciaux</b> de l'entreprise Madera !</h3>
+        <h1 class="display-4">Liste des <span id="titre_section">clients</span></h1>
+        <h3 class="mb-4">Retrouvez ici la liste des <b>clients</b> de l'entreprise Madera !</h3>
         <hr />
 
-        <a asp-action="Create"><button type="button" class="btn btn-success mb-4"><span><i class="fas fa-plus"></i></span> Nouveau commercial</button></a>
+        <a asp-action="Create"><button type="button" class="btn btn-success mb-4"><span><i class="fas fa-plus"></i></span> Nouveau client</button></a>
     </div>
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Commerciaux</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Clients</h6>
         </div>
 
         <div class="card-body">
@@ -23,6 +23,12 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ID)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Company)
+                            </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.FirstName)
                             </th>
@@ -34,9 +40,6 @@
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.Phone)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Country)
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.CreatedAt)
@@ -49,6 +52,12 @@
                     <tfoot>
                         <tr>
                             <th>
+                                @Html.DisplayNameFor(model => model.ID)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Company)
+                            </th>
+                            <th>
                                 @Html.DisplayNameFor(model => model.FirstName)
                             </th>
                             <th>
@@ -59,9 +68,6 @@
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.Phone)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Country)
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.CreatedAt)
@@ -76,7 +82,13 @@
                         {
                             <tr>
                                 <td>
-                                    <a asp-action="Details" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.FirstName)</a>
+                                    <a asp-action="Details" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.ID)</a>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Company)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FirstName)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.LastName)
@@ -86,9 +98,6 @@
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Phone)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Country)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.CreatedAt)
@@ -107,15 +116,15 @@
 </div>
 
 <!-- Section CSS -->
-@section Styles{
-    <!-- HomePage Commercial core CSS -->
+@section styles{
+    <!-- HomePage Client core CSS -->
     <script src="~/lib/datatables/css/dataTables.bootstrap4.css"></script>
 }
 
 <!-- Section JS -->
-@section Scripts{
-    <!-- HomePage Commercial core JavaScript -->
+@section scripts{
+    <!-- HomePage Client core JavaScript -->
     <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
     <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js"></script>
-    <script src="~/js/Liste_Commercial.js"></script>
+    <script src="~/js/Liste_Client.js"></script>
 }
