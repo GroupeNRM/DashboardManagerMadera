@@ -1,0 +1,63 @@
+﻿@model DashboardManagerMadera.Models.Commercial
+
+@{
+    ViewData["Title"] = "Nouveau commercial";
+}
+
+<div class="section">
+    <div class="text-left">
+        <h1 class="display-4">Nouveau <span id="titre_section">commercial</span></h1>
+        <h3>Remplisser le formulaire ci-dessous, pour ajouter un <b>nouveau commercial</b> !</h3>
+        <hr />
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-lg-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group form-row">
+                    <div class="col">
+                        <label asp-for="FirstName" class="control-label"></label>
+                        <input asp-for="FirstName" class="form-control" placeholder="DOE" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+
+                    <div class="col">
+                        <label asp-for="LastName" class="control-label"></label>
+                        <input asp-for="LastName" class="form-control" placeholder="John" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" placeholder="johnDoe@domain.com" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone" class="control-label"></label>
+                    <input asp-for="Phone" class="form-control" placeholder="0102030405" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Country" class="control-label"></label>
+                    <select asp-for="Country" class="form-control">
+                        <option value="France">France</option>
+                        <option value="Espagne">Espagne</option>
+                        <option value="Angleterre">Angleterre</option>
+                        <option value="Italie">Italie</option>
+                        <option value="Allemagne">Allemagne</option>
+                        <option value="Etats-Unis">Etats-Unis</option>
+                    </select>
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Enregistrer" class="btn btn-primary btn-block" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
