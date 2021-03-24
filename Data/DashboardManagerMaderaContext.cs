@@ -15,5 +15,7 @@ namespace DashboardManagerMadera.Data
         }
 
         public DbSet<DashboardManagerMadera.Models.Commercial> Commercial { get; set; }
+
+        public DbSet<DashboardManagerMadera.Models.Client> Client { get; set; }
     }
 }
