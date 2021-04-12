@@ -2,7 +2,22 @@
     ViewData["Title"] = "Accueil";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="section">
+    <div class="text-left">
+        <h1 class="display-4">Accueil du <span id="titre_section">dashboard</span></h1>
+        <p>Retrouvez l'ensemble de vos collaborateurs dans la partie <b>Consultation</b> de la navigation !</p>
+    </div>
+    <div class="text-center">
+        <img src="~/img/IMG_BACKGROUND_LOGIN.jpg" alt="IMG Maison" />
+    </div>
 </div>
+
+<!-- Section CSS -->
+@section styles{
+    <!-- HomePage core CSS -->
+    <link rel="stylesheet" href="~/css/Accueil.css" />
+}
+
+<!-- Section JS -->
+@section scripts{
+}
