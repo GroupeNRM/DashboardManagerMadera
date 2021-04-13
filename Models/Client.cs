@@ -7,7 +7,8 @@ namespace DashboardManagerMadera.Models
     [Table("Client")]
     public class Client
     {
-        [Column("ID_Client"), Display(Name = "Code client"), Key]
+        [Key, Column("ID_Client"), Display(Name = "Code client")]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         [Column("Societe_Client", TypeName = "nvarchar"), Display(Name = "Société"), Required(ErrorMessage = "Champ obligatoire !"), MaxLength(50, ErrorMessage = "Le libellé de votre société ne peut contenir plus de 50 caractères !")]
